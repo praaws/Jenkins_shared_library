@@ -1,18 +1,8 @@
-// Jenkinsfile.groovy
-
-def call() {
-    stage('Checkout') {
-        steps {
-            script {
-                // Clone the Git repository
-                git(
-                    branch: 'your-branch',
-                    url: 'your-git-repo-url'
-                )
-            }
-        }
-    }
-}
-
-return this
-
+def call(Map stageParams) {
+ 
+    checkout([
+        $class: 'GitSCM',
+        branches: [[name:  stageParams.branch ]],
+        userRemoteConfigs: [[ url: stageParams.url ]]
+    ])
+  }
