@@ -1,15 +1,13 @@
 // Jenkinsfile.groovy
 
-def call() {
+def checkoutStage() {
     stage('Checkout') {
         steps {
             script {
-                // Define the Git credentials
-
                 // Clone the Git repository
                 git(
-                    branch: 'main',
-                    url: 'https://github.com/praaws/gite2e.git'
+                    branch: 'your-branch',
+                    url: 'your-git-repo-url'
                 )
             }
         }
@@ -17,3 +15,4 @@ def call() {
 }
 
 return this
+
