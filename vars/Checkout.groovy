@@ -1,6 +1,6 @@
 // Jenkinsfile.groovy
 
-def checkoutStage() {
+def call() {
     stage('Checkout') {
         steps {
             script {
